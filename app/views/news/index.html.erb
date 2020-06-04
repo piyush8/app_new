@@ -1,0 +1,23 @@
+<div class="linkDiv">
+	<%= link_to 'Import Data From Link', import_path %>
+</div>
+<% if @news.present? %>
+	<table>
+		<tr>
+			<th>Source ID</th>
+			<th>Source Name</th>
+			<th>Author</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Url</th>
+			<th>Image URL</th>
+			<th>Publish At</th>
+			<th>Content</th>
+		</tr>
+		<tbody>
+			<%= render partial: "news_data", collection: @news, as: :news_data %>
+		</tbody>
+	</table>
+<% else %>
+	<span>News Data not Found</span>
+<% end %>
